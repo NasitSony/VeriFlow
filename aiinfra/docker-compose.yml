@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: aiinfra-postgres
+    environment:
+      POSTGRES_DB: aiinfra
+      POSTGRES_USER: aiinfra
+      POSTGRES_PASSWORD: aiinfra
+    ports:
+      - "5434:5432"
+    volumes:
+      - aiinfra_pg:/var/lib/postgresql/data
+
+volumes:
+  aiinfra_pg:

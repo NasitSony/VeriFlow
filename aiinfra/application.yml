@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5434/aiinfra
+    username: aiinfra
+    password: aiinfra
+  jpa:
+    hibernate:
+      ddl-auto: update   # v0.1 only; later switch to Flyway
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
